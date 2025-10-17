@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuanStore - Cửa hàng điện tử</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-detailed-modal.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="image/logo.png" alt="TechStore" class="logo">
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="active">Trang chủ</a></li>
+                    <li><a href="#">Sản phẩm</a></li>
+                    <li><a href="">Khuyến mãi</a></li>
+                    <li><a href="">Tin tức</a></li>
+                    <li><a href="">Giới thiệu</a></li>
+                    <li><a href="">Liên hệ</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <!-- Admin Link -->
+                <a href="admin.html" class="admin-link" title="Admin Panel">
+                    <i class="fas fa-cog"></i>
+                </a>
+                <!-- Horizontal Search Box -->
+                <div class="search-container">
+                    <div class="horizontal-search-box" id="searchBox">
+                        <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm..." 
+                               onfocus="showSearchSuggestions()" 
+                               onblur="hideSearchSuggestions()" 
+                               onkeyup="handleSearchInput(event)"
+                               oninput="handleSearchInput(event)">
+                        <button class="search-btn" id="searchBtn" onclick="performSearch()">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <div class="search-suggestions" id="searchSuggestions">
+                            <div class="suggestions-header">
+                                <span class="suggestions-title">Gợi ý tìm kiếm</span>
+                            </div>
+                            <div class="suggestions-content" id="suggestionsContent">
+                                <!-- Suggestions will be populated here -->
+                            </div>
+                            <div class="search-trending">
+                                <span class="trending-title">Tìm kiếm phổ biến:</span>
+                                <div class="trending-tags">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- User Authentication -->
+                <div class="auth-buttons" id="authButtons">
+                    <a href="login.html" class="login-btn">
+                        <i class="fas fa-sign-in-alt"></i> Đăng nhập
+                    </a>
+                </div>
+                
+                <!-- User Profile Dropdown -->
+                <div class="user-profile" id="userProfile" style="display: none;">
+                    <a href="" class="user-avatar">
+                        <i class="fas fa-user-circle"></i>
+                        <span id="userName">Tên người dùng</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="user-dropdown" id="userDropdown">
+                        <a href="#" onclick="showUserInfo()">
+                            <i class="fas fa-user"></i> Thông tin cá nhân
+                        </a>
+                        <a href="#" onclick="showOrderHistory()">
+                            <i class="fas fa-shopping-bag"></i> Đơn hàng
+                        </a>
+                        <a href="#" onclick="showFavorites()">
+                            <i class="fas fa-heart"></i> Yêu thích
+                        </a>
+                        <hr>
+                        <a href="#" onclick="logout()">
+                            <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Banner Slider -->
+    <section class="banner-slider" id="home">
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('image/baner.png');">
+                    <div class="slide-content">
+                        <h2>iPhone 17 AIR</h2>
+                        <p>Thiết kế titan cao cấp, chip A17 Pro mạnh mẽ</p>
+                        <button class="cta-button" onclick="scrollToProducts()">Khám phá ngay</button>
+                    </div>
+                </div>
+                
+                <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('image/banner0.png');">
+                    <div class="slide-content">
+                        <h2>MacBook Pro M3 Max</h2>
+                        <p>Hiệu năng vượt trội cho chuyên gia</p>
+                        <button class="cta-button" onclick="scrollToProducts()">Khám phá ngay</button>
+                    </div>
+                </div>
+                
+                <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('image/banner0.png');">
+                    <div class="slide-content">
+                        <h2>Samsung Smart TV 4K</h2>
+                        <p>Trải nghiệm hình ảnh sống động</p>
+                        <button class="cta-button" onclick="scrollToProducts()">Khám phá ngay</button>
+                    </div>
+                </div>
+                
+                <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('image/baner.png');">
+                    <div class="slide-content">
+                        <h2>AirPods Pro 3</h2>
+                        <p>Âm thanh không gian tuyệt vời</p>
+                        <button class="cta-button" onclick="scrollToProducts()">Khám phá ngay</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slider Navigation -->
+            <div class="slider-nav">
+                <button class="nav-btn prev-btn" onclick="changeSlide(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="nav-btn next-btn" onclick="changeSlide(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <!-- Slider Dots -->
+            <div class="slider-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section" id="products">
+        <div class="container">
+            <h2>Sản phẩm nổi bật</h2>
+            <div class="filter-buttons">
+                <div class="filter-btn-container">
+                    <button class="filter-btn active" data-category="all" onclick="resetFilters()">Tất cả</button>
+                </div>
+                <div class="filter-btn-container">
+                    <button class="filter-btn" data-category="Điện thoại">Điện thoại</button>
+                    <div class="brand-dropdown">
+                        <a href="#" data-brand="apple">Apple</a>
+                        <a href="#" data-brand="samsung">Samsung</a>
+                        <a href="#" data-brand="xiaomi">Xiaomi</a>
+                        <a href="#" data-brand="oppo">OPPO</a>
+                        <a href="#" data-brand="vivo">Vivo</a>
+                        <a href="#" data-brand="huawei">Huawei</a>
+                    </div>
+                </div>
+                <div class="filter-btn-container">
+                    <button class="filter-btn" data-category="Máy tính">Máy tính</button>
+                    <div class="brand-dropdown">
+                        <a href="#" data-brand="apple">Apple MacBook</a>
+                        <a href="#" data-brand="asus">ASUS</a>
+                        <a href="#" data-brand="dell">Dell</a>
+                        <a href="#" data-brand="hp">HP</a>
+                        <a href="#" data-brand="lenovo">Lenovo</a>
+                        <a href="#" data-brand="acer">Acer</a>
+                    </div>
+                </div>
+                <div class="filter-btn-container">
+                    <button class="filter-btn" data-category="TV">TV</button>
+                    <div class="brand-dropdown">
+                        <a href="#" data-brand="samsung">Samsung</a>
+                        <a href="#" data-brand="lg">LG</a>
+                        <a href="#" data-brand="sony">Sony</a>
+                        <a href="#" data-brand="tcl">TCL</a>
+                        <a href="#" data-brand="xiaomi">Xiaomi</a>
+                        <a href="#" data-brand="hisense">Hisense</a>
+                    </div>
+                </div>
+                <div class="filter-btn-container">
+                    <button class="filter-btn" data-category="Phụ kiện">Phụ kiện</button>
+                    <div class="brand-dropdown">
+                        <a href="#" data-brand="apple">Apple Accessories</a>
+                        <a href="#" data-brand="samsung">Samsung Accessories</a>
+                        <a href="#" data-brand="xiaomi">Xiaomi Accessories</a>
+                        <a href="#" data-brand="jbl">JBL</a>
+                        <a href="#" data-brand="sony">Sony</a>
+                        <a href="#" data-brand="anker">Anker</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotions Section -->
+    <section class="promotions-section" id="promotions">
+        <div class="container">
+            <h2><i class="fas fa-fire"></i> Khuyến mãi hot</h2>
+            <div class="promotions-grid">
+                <div class="promotion-card">
+                    <div class="promotion-image">
+                        <img src="image/ip17.jpg" alt="iPhone 17 Pro">
+                        <div class="promotion-badge">-20%</div>
+                    </div>
+                    <div class="promotion-content">
+                        <h3>iPhone 17 Pro</h3>
+                        <p class="promotion-price">
+                            <span class="old-price">35.990.000 VNĐ</span>
+                            <span class="new-price">28.790.000 VNĐ</span>
+                        </p>
+                        <p class="promotion-desc">Giảm giá sốc cho iPhone 17 Pro mới nhất</p>
+                        <button class="promotion-btn" onclick="window.location.href='detail.html?id=1'">Xem ngay</button>
+                    </div>
+                </div>
+                
+                <div class="promotion-card">
+                    <div class="promotion-image">
+                        <img src="image/samsung.webp" alt="Samsung Galaxy S24">
+                        <div class="promotion-badge">-15%</div>
+                    </div>
+                    <div class="promotion-content">
+                        <h3>Samsung Galaxy S24</h3>
+                        <p class="promotion-price">
+                            <span class="old-price">24.990.000 VNĐ</span>
+                            <span class="new-price">21.240.000 VNĐ</span>
+                        </p>
+                        <p class="promotion-desc">Ưu đãi đặc biệt cho Galaxy S24</p>
+                        <button class="promotion-btn" onclick="window.location.href='detail.html?id=2'">Xem ngay</button>
+                    </div>
+                </div>
+                
+                <div class="promotion-card">
+                    <div class="promotion-image">
+                        <img src="image/maytinh1.webp" alt="MacBook Pro M3">
+                        <div class="promotion-badge">-10%</div>
+                    </div>
+                    <div class="promotion-content">
+                        <h3>MacBook Pro M3</h3>
+                        <p class="promotion-price">
+                            <span class="old-price">45.990.000 VNĐ</span>
+                            <span class="new-price">41.390.000 VNĐ</span>
+                        </p>
+                        <p class="promotion-desc">MacBook Pro với chip M3 mạnh mẽ</p>
+                        <button class="promotion-btn" onclick="window.location.href='detail.html?id=3'">Xem ngay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Products Section with Sidebar -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-layout">
+                <!-- Sidebar Filter -->
+                <div class="sidebar-filter">
+                    <div class="filter-card">
+                        <h3><i class="fas fa-search"></i> Tìm theo giá</h3>
+                        <div class="price-range-filter">
+                            <label class="checkbox-item">
+                                <input type="checkbox" data-range="0-5m" value="0-5000000">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Dưới 5 triệu</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" data-range="5-10m" value="5000000-10000000">
+                                <span class="checkmark"></span>
+                                <span class="label-text">5 - 10 triệu</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" data-range="10-15m" value="10000000-15000000">
+                                <span class="checkmark"></span>
+                                <span class="label-text">10 - 15 triệu</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" data-range="15-20m" value="15000000-20000000">
+                                <span class="checkmark"></span>
+                                <span class="label-text">15 - 20 triệu</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" data-range="20-50m" value="20000000-50000000">
+                                <span class="checkmark"></span>
+                                <span class="label-text">20 - 50 triệu</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" data-range="50m+" value="50000000-999999999">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Trên 50 triệu</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-card">
+                        <h3><i class="fas fa-tags"></i> Tìm theo hãng</h3>
+                        <div class="brand-filter">
+                            <label class="checkbox-item">
+                                <input type="checkbox" data-brand="apple" value="apple">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Apple</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" data-brand="samsung" value="samsung">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Samsung</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" data-brand="xiaomi" value="xiaomi">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Xiaomi</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" data-brand="dell" value="dell">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Dell</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" data-brand="hp" value="hp">
+                                <span class="checkmark"></span>
+                                <span class="label-text">HP</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" data-brand="asus" value="asus">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Asus</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" data-brand="lenovo" value="lenovo">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Lenovo</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" data-brand="acer" value="acer">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Acer</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" data-brand="lg" value="lg">
+                                <span class="checkmark"></span>
+                                <span class="label-text">LG</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" data-brand="sony" value="sony">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Sony</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" data-brand="tcl" value="tcl">
+                                <span class="checkmark"></span>
+                                <span class="label-text">TCL</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-card">
+                        <button class="reset-filters-btn" onclick="resetFilters()">
+                            <i class="fas fa-refresh"></i> Xóa bộ lọc
+                        </button>
+                    </div>
+                    
+                    <div class="filter-card">
+                        <h3><i class="fas fa-sort"></i> Sắp xếp</h3>
+                        <div class="sort-filter">
+                            <label class="radio-item">
+                                <input type="radio" name="sort" value="default" checked>
+                                <span class="radio-mark"></span>
+                                <span class="label-text">Mặc định</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="sort" value="price-low">
+                                <span class="radio-mark"></span>
+                                <span class="label-text">Giá thấp → cao</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="sort" value="price-high">
+                                <span class="radio-mark"></span>
+                                <span class="label-text">Giá cao → thấp</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="sort" value="name">
+                                <span class="radio-mark"></span>
+                                <span class="label-text">Tên A → Z</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Products Grid -->
+                <div class="products-main">
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Products will be loaded here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content vip-modal detailed-product-modal">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <!-- Left Column - Images -->
+                <div class="modal-left">
+                    <div class="modal-image">
+                        <div id="modalImage" class="product-image-large">
+                            <div class="image-zoom-layer" onclick="zoomImage(event)">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                        <div class="product-badges">
+                            <div class="product-badge vip">
+                                <i class="fas fa-crown"></i>
+                                <span>VIP</span>
+                            </div>
+                            <div class="product-badge new" id="newBadge" style="display: none;">
+                                <span>MỚI</span>
+                            </div>
+                            <div class="product-badge hot" id="hotBadge" style="display: none;">
+                                <i class="fas fa-fire"></i>
+                                <span>HOT</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Image Gallery -->
+                    <div class="product-image-gallery" id="imageGallery">
+                        <div class="gallery-nav gallery-nav-left" onclick="scrollGallery('left')">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <div class="gallery-nav gallery-nav-right" onclick="scrollGallery('right')">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Quick Actions -->
+                    <div class="quick-actions">
+                        <button class="quick-action-btn" onclick="shareProduct()">
+                            <i class="fas fa-share-alt"></i>
+                            Chia sẻ
+                        </button>
+                        <button class="quick-action-btn" onclick="addToWishlist()">
+                            <i class="fas fa-heart"></i>
+                            Yêu thích
+                        </button>
+                        <button class="quick-action-btn" onclick="compareProduct()">
+                            <i class="fas fa-balance-scale"></i>
+                            So sánh
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Right Column - Product Info -->
+                <div class="modal-right">
+                    <div class="modal-info">
+                        <!-- Brand and Category -->
+                        <div class="product-breadcrumb">
+                            <span id="modalBrand"></span>
+                            <span class="separator">›</span>
+                            <span id="modalCategory"></span>
+                        </div>
+                        
+                        <!-- Product Header -->
+                        <div class="product-header">
+                            <h1 id="modalTitle"></h1>
+                            <div class="product-rating">
+                                <div class="stars" id="modalRating"></div>
+                                <span class="rating-text" id="modalRatingText"></span>
+                                <span class="rating-count" id="ratingCount"></span>
+                            </div>
+                        </div>
+                        
+                        <!-- Price Section -->
+                        <div class="price-section">
+                            <div class="price-main">
+                                <p class="modal-price" id="modalPrice"></p>
+                                <div class="price-actions">
+                                    <span class="price-breakdown" id="priceBreakdown"></span>
+                                    <button class="price-calculator-btn" onclick="showPriceCalculator()">
+                                        <i class="fas fa-calculator"></i> Tính trả góp
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="price-comparison" id="priceComparison" style="display: none;">
+                                <div class="price-history">
+                                    <span class="price-history-label">Giá trung bình:</span>
+                                    <span class="price-history-value" id="averagePrice"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product Description -->
+                        <div class="product-description-section">
+                            <h4><i class="fas fa-info-circle"></i> Mô tả sản phẩm</h4>
+                            <p class="modal-description" id="modalDescription"></p>
+                        </div>
+                        
+                        <!-- Device Specification Highlights -->
+                        <div class="device-highlights">
+                            <div class="spec-highlight">
+                                <div class="spec-icon">
+                                    <i class="fas fa-tv"></i>
+                                </div>
+                                <div class="spec-info">
+                                    <div class="spec-label">Màn hình</div>
+                                    <div class="spec-value" id="screenHighlight">6.1 inch</div>
+                                </div>
+                            </div>
+                            <div class="spec-highlight">
+                                <div class="spec-icon">
+                                    <i class="fas fa-microchip"></i>
+                                </div>
+                                <div class="spec-info">
+                                    <div class="spec-label">Chip</div>
+                                    <div class="spec-value" id="chipHighlight">A19 Pro</div>
+                                </div>
+                            </div>
+                            <div class="spec-highlight">
+                                <div class="spec-icon">
+                                    <i class="fas fa-memory"></i>
+                                </div>
+                                <div class="spec-info">
+                                    <div class="spec-label">RAM</div>
+                                    <div class="spec-value" id="ramHighlight">8GB</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Options -->
+                        <div class="product-options">
+                            <!-- Image Preview -->
+                            <div class="option-section" id="colorPreviewSection">
+                                <h4><i class="fas fa-eye"></i> Xem trước</h4>
+                                <div class="color-preview" id="colorPreview">
+                                    <img src="" alt="Sản phẩm preview" id="previewImage">
+                                </div>
+                            </div>
+                            
+                            <!-- Color Selection -->
+                            <div class="option-section" id="colorSection">
+                                <h4><i class="fas fa-palette"></i> Màu sắc</h4>
+                                <div class="color-options" id="colorOptions">
+                                    <!-- Color options will be populated dynamically -->
+                                </div>
+                            </div>
+                            
+                            <!-- Storage Selection -->
+                            <div class="option-section" id="storageSection">
+                                <h4><i class="fas fa-hdd"></i> Dung lượng lưu trữ</h4>
+                                <div class="storage-options" id="storageOptions">
+                                    <!-- Storage options will be populated dynamically -->
+                                </div>
+                            </div>
+                            
+                            <!-- RAM Selection -->
+                            <div class="option-section" id="ramSection" style="display: none;">
+                                <h4><i class="fas fa-memory"></i> RAM</h4>
+                                <div class="ram-options" id="ramOptions"></div>
+                            </div>
+                            
+                            <!-- Size Selection (TV) -->
+                            <div class="option-section" id="sizeSection" style="display: none;">
+                                <h4><i class="fas fa-tv"></i> Kích thước</h4>
+                                <div class="size-options" id="sizeOptions"></div>
+                            </div>
+                            
+                            <!-- Selected Options Summary -->
+                            <div class="selected-options-summary" id="selectedOptionsSummary">
+                                <h4><i class="fas fa-list-check"></i> Tùy chọn đã chọn</h4>
+                                <div class="summary-items">
+                                    <div class="summary-item" id="selectedColor">
+                                        <span class="summary-label">Màu:</span>
+                                        <span class="summary-value"></span>
+                                    </div>
+                                    <div class="summary-item" id="selectedStorage">
+                                        <span class="summary-label">Dung lượng:</span>
+                                        <span class="summary-value"></span>
+                                    </div>
+                                    <div class="summary-item" id="finalPrice">
+                                        <span class="summary-label">Giá:</span>
+                                        <span class="summary-value"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Stock and Availability -->
+                        <div class="stock-section">
+                            <div class="stock-status" id="stockStatus">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Còn hàng</span>
+                            </div>
+                            <div class="delivery-info">
+                                <i class="fas fa-truck"></i>
+                                <span>Giao hàng miễn phí trong 24h</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Key Features -->
+                        <div class="key-features" id="keyFeatures">
+                            <h4><i class="fas fa-star"></i> Điểm nổi bật</h4>
+                            <ul id="keyFeaturesList">
+                                <!-- Will be populated by JavaScript -->
+                            </ul>
+                        </div>
+                        
+                        <!-- Seller Information -->
+                        <div class="seller-info">
+                            <div class="seller-logo">
+                                <img src="image/logo.png" alt="TechStore">
+                            </div>
+                            <div class="seller-details">
+                                <h5>TechStore Official</h5>
+                                <span class="seller-rating">
+                                    <i class="fas fa-star"></i> 4.9/5
+                                    <span class="seller-reviews">(15,000+ đánh giá)</span>
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="modal-actions">
+                            <button class="add-to-cart-btn" id="addToCartBtn">
+                                <i class="fas fa-cart-plus"></i> Thêm vào giỏ
+                            </button>
+                            <button class="buy-now-btn" id="buyNowBtn">
+                                <i class="fas fa-bolt"></i> Mua ngay
+                            </button>
+                            <button class="installment-btn" onclick="showInstallmentPlan()">
+                                <i class="fas fa-credit-card"></i> Trả góp 0%
+                            </button>
+                        </div>
+                        
+                        <!-- Promotions -->
+                        <div class="promotions-section" id="promotionsSection">
+                            <h4><i class="fas fa-gift"></i> Khuyến mại</h4>
+                            <ul id="promotionsList">
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>Tặng keo dán màn hình (trị giá 200.000đ)</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>Bảo hành chính hãng 12 tháng</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>Hỗ trợ đổi trả trong 30 ngày</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Warranty and Support -->
+                        <div class="warranty-section">
+                            <h4><i class="fas fa-shield-alt"></i> Bảo hành & Hỗ trợ</h4>
+                            <div class="warranty-items">
+                                <div class="warranty-item">
+                                    <i class="fas fa-tools"></i>
+                                    <div>
+                                        <h5>Bảo hành chính hãng</h5>
+                                        <p>12 tháng tại trung tâm bảo hành chính thức</p>
+                                    </div>
+                                </div>
+                                <div class="warranty-item">
+                                    <i class="fas fa-shipping-fast"></i>
+                                    <div>
+                                        <h5>Vận chuyển miễn phí</h5>
+                                        <p>Giao hàng nhanh trong thành phố</p>
+                                    </div>
+                                </div>
+                                <div class="warranty-item">
+                                    <i class="fas fa-undo"></i>
+                                    <div>
+                                        <h5>Đổi trả dễ dàng</h5>
+                                        <p>Hỗ trợ đổi trả trong 30 ngày</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Navigation -->
+            <div class="modal-bottom-nav">
+                <button class="nav-tab active" onclick="showTab('specifications')">
+                    <i class="fas fa-cogs"></i> Thông số
+                </button>
+                <button class="nav-tab" onclick="showTab('reviews')">
+                    <i class="fas fa-star"></i> Đánh giá
+                </button>
+                <button class="nav-tab" onclick="showTab('related')">
+                    <i class="fas fa-th-large"></i> Sản phẩm liên quan
+                </button>
+                <button class="nav-tab" onclick="showTab('questions')">
+                    <i class="fas fa-question-circle"></i> Hỏi đáp
+                </button>
+            </div>
+            
+            <!-- Bottom Content Panels -->
+            <div class="modal-bottom-content">
+                <!-- Specifications Tab -->
+                <div class="tab-content active" id="specificationsTab">
+                    <h4><i class="fas fa-cogs"></i> Thông số kỹ thuật chi tiết</h4>
+                    <div class="specs-grid detailed-specs" id="specsGrid"></div>
+                </div>
+                
+                <!-- Reviews Tab -->
+                <div class="tab-content" id="reviewsTab">
+                    <h4><i class="fas fa-star"></i> Đánh giá từ khách hàng</h4>
+                    <div class="reviews-summary">
+                        <div class="rating-overview">
+                            <span class="rating-number" id="reviewRating">4.8</span>
+                            <div class="rating-stars">
+                                <div id="reviewStars"></div>
+                            </div>
+                            <span class="rating-total" id="reviewTotal">(123 đánh giá)</span>
+                        </div>
+                        <div class="rating-breakdown">
+                            <div class="rating-bar">
+                                <label>5★</label>
+                                <div class="bar-fill">
+                                    <div class="bar" style="width: 80%"></div>
+                                </div>
+                                <span>98</span>
+                            </div>
+                            <div class="rating-bar">
+                                <label>4★</label>
+                                <div class="bar-fill">
+                                    <div class="bar" style="width: 60%"></div>
+                                </div>
+                                <span>20</span>
+                            </div>
+                            <div class="rating-bar">
+                                <label>3★</label>
+                                <div class="bar-fill">
+                                    <div class="bar" style="width: 20%"></div>
+                                </div>
+                                <span>4</span>
+                            </div>
+                            <div class="rating-bar">
+                                <label>2★</label>
+                                <div class="bar-fill">
+                                    <div class="bar" style="width: 5%"></div>
+                                </div>
+                                <span>1</span>
+                            </div>
+                            <div class="rating-bar">
+                                <label>1★</label>
+                                <div class="bar-fill">
+                                    <div class="bar" style="width: 2%"></div>
+                                </div>
+                                <span>0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews-list" id="reviewsList">
+                        <!-- Reviews will be populated dynamically -->
+                    </div>
+                </div>
+                
+                <!-- Related Products Tab -->
+                <div class="tab-content" id="relatedTab">
+                    <h4><i class="fas fa-th-large"></i> Sản phẩm liên quan</h4>
+                    <div class="related-products-grid" id="relatedProducts">
+                        <!-- Related products will be populated dynamically -->
+                    </div>
+                </div>
+                
+                <!-- Q&A Tab -->
+                <div class="tab-content" id="questionsTab">
+                    <h4><i class="fas fa-question-circle"></i> Hỏi đáp</h4>
+                    <div class="qa-section">
+                        <div class="qa-form">
+                            <h5>Đặt câu hỏi</h5>
+                            <textarea placeholder="Đặt câu hỏi về sản phẩm này..." id="questionInput"></textarea>
+                            <button onclick="submitQuestion()">Gửi câu hỏi</button>
+                        </div>
+                        <div class="qa-list" id="qaList">
+                            <!-- Q&A will be populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Giỏ hàng</h3>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        
+        <!-- Cart Tabs -->
+        <div class="cart-tabs">
+            <button class="cart-tab active" onclick="switchCartTab('cart')">
+                <i class="fas fa-shopping-cart"></i> Giỏ hàng
+            </button>
+            <button class="cart-tab" onclick="switchCartTab('history')">
+                <i class="fas fa-history"></i> Lịch sử
+            </button>
+        </div>
+        
+        <!-- Cart Content -->
+        <div class="cart-content active" id="cartContent">
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be loaded here -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Tổng cộng: <span id="cartTotal">0 VNĐ</span></strong>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn btn-primary" onclick="goToCheckout()">
+                        <i class="fas fa-credit-card"></i> Thanh toán
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Order History Content -->
+        <div class="cart-content" id="historyContent">
+            <div class="order-history" id="orderHistory">
+                <!-- Order history will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-grid">
+                    <!-- About Section -->
+                    <div class="footer-column">
+                        <div class="footer-logo">
+                            <img src="image/logo.png" alt="TuanStore">
+                            <h3>TuanStore</h3>
+                        </div>
+                        <p class="footer-desc">
+                            Hệ thống bán lẻ điện tử uy tín hàng đầu Việt Nam. Chuyên cung cấp các sản phẩm điện tử chính hãng với giá cả cạnh tranh và dịch vụ hoàn hảo.
+                        </p>
+                        <div class="footer-verified">
+                            <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/bo-cong-thuong-2.png" alt="Đã đăng ký bộ công thương" title="Đã đăng ký với Bộ Công Thương">
+                        </div>
+                    </div>
+
+                    <!-- Customer Support -->
+                    <div class="footer-column">
+                        <h4><i class="fas fa-headset"></i> Hỗ trợ khách hàng</h4>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Chính sách bảo hành</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Chính sách đổi trả</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Chính sách vận chuyển</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Hướng dẫn mua hàng</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Hướng dẫn thanh toán</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Câu hỏi thường gặp</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Information -->
+                    <div class="footer-column">
+                        <h4><i class="fas fa-info-circle"></i> Về chúng tôi</h4>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Giới thiệu TuanStore</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Tuyển dụng</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Tin tức & Sự kiện</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Hệ thống cửa hàng</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Chương trình khuyến mãi</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Điều khoản sử dụng</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="footer-column">
+                        <h4><i class="fas fa-phone-alt"></i> Liên hệ với chúng tôi</h4>
+                        <div class="footer-contact">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Địa chỉ:</strong>
+                                    <p>123 Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Hotline:</strong>
+                                    <p><a href="tel:19001234">1900 1234</a> (8:00 - 22:00)</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email:</strong>
+                                    <p><a href="mailto:support@tuanstore.vn">support@tuanstore.vn</a></p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Giờ làm việc:</strong>
+                                    <p>Thứ 2 - Chủ nhật: 8:00 - 22:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Middle - Social Media & Payment -->
+            <div class="footer-middle">
+                <div class="footer-social-payment">
+                    <!-- Social Media -->
+                    <div class="social-section">
+                        <h4><i class="fas fa-share-alt"></i> Kết nối với chúng tôi</h4>
+                        <div class="social-links">
+                            <a href="https://facebook.com/tuanstore" target="_blank" class="social-link facebook" title="Facebook - Đã xác minh">
+                                <i class="fab fa-facebook-f"></i>
+                                <span class="verified-badge"><i class="fas fa-check-circle"></i></span>
+                                <span class="social-name">Facebook</span>
+                            </a>
+                            <a href="https://tiktok.com/@tuanstore" target="_blank" class="social-link tiktok" title="TikTok - Đã xác minh">
+                                <i class="fab fa-tiktok"></i>
+                                <span class="verified-badge"><i class="fas fa-check-circle"></i></span>
+                                <span class="social-name">TikTok</span>
+                            </a>
+                            <a href="https://instagram.com/tuanstore" target="_blank" class="social-link instagram" title="Instagram - Đã xác minh">
+                                <i class="fab fa-instagram"></i>
+                                <span class="verified-badge"><i class="fas fa-check-circle"></i></span>
+                                <span class="social-name">Instagram</span>
+                            </a>
+                            <a href="https://youtube.com/@tuanstore" target="_blank" class="social-link youtube" title="YouTube - Đã xác minh">
+                                <i class="fab fa-youtube"></i>
+                                <span class="verified-badge"><i class="fas fa-check-circle"></i></span>
+                                <span class="social-name">YouTube</span>
+                            </a>
+                            <a href="https://zalo.me/tuanstore" target="_blank" class="social-link zalo" title="Zalo - Đã xác minh">
+                                <svg viewBox="0 0 48 48" fill="currentColor" width="20" height="20">
+                                    <path d="M24 4C13 4 4 13 4 24s9 20 20 20 20-9 20-20S35 4 24 4zm0 36c-8.8 0-16-7.2-16-16S15.2 8 24 8s16 7.2 16 16-7.2 16-16 16z"/>
+                                    <path d="M29.5 19.5c-.3-.3-.8-.5-1.2-.5h-8.6c-.9 0-1.7.8-1.7 1.7v6.6c0 .9.8 1.7 1.7 1.7h8.6c.5 0 .9-.2 1.2-.5.3-.3.5-.8.5-1.2v-6.6c0-.5-.2-.9-.5-1.2z"/>
+                                </svg>
+                                <span class="verified-badge"><i class="fas fa-check-circle"></i></span>
+                                <span class="social-name">Zalo</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <div class="payment-section">
+                        <h4><i class="fas fa-credit-card"></i> Phương thức thanh toán</h4>
+                        <div class="payment-methods">
+                            <div class="payment-item" title="Visa">
+                                <i class="fab fa-cc-visa"></i>
+                            </div>
+                            <div class="payment-item" title="Mastercard">
+                                <i class="fab fa-cc-mastercard"></i>
+                            </div>
+                            <div class="payment-item" title="JCB">
+                                <i class="fab fa-cc-jcb"></i>
+                            </div>
+                            <div class="payment-item" title="MoMo">
+                                <svg viewBox="0 0 48 48" fill="#D82D8B" width="28" height="28">
+                                    <circle cx="24" cy="24" r="22"/>
+                                    <text x="50%" y="50%" text-anchor="middle" fill="white" font-size="18" dy=".3em" font-weight="bold">M</text>
+                                </svg>
+                            </div>
+                            <div class="payment-item" title="ZaloPay">
+                                <svg viewBox="0 0 48 48" fill="#0068FF" width="28" height="28">
+                                    <circle cx="24" cy="24" r="22"/>
+                                    <text x="50%" y="50%" text-anchor="middle" fill="white" font-size="16" dy=".3em" font-weight="bold">Z</text>
+                                </svg>
+                            </div>
+                            <div class="payment-item" title="VNPay">
+                                <svg viewBox="0 0 48 48" fill="#0B61A4" width="28" height="28">
+                                    <rect width="48" height="48" rx="4"/>
+                                    <text x="50%" y="50%" text-anchor="middle" fill="white" font-size="14" dy=".3em" font-weight="bold">VN</text>
+                                </svg>
+                            </div>
+                            <div class="payment-item" title="Thanh toán khi nhận hàng">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="newsletter-section">
+                    <h4><i class="fas fa-envelope-open-text"></i> Đăng ký nhận tin khuyến mãi</h4>
+                    <p>Nhận thông tin về sản phẩm mới và ưu đãi đặc biệt</p>
+                    <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                        <input type="email" placeholder="Nhập email của bạn..." required>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i> Đăng ký
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 TuanStore. Tất cả quyền được bảo lưu.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Chính sách bảo mật</a>
+                        <span>|</span>
+                        <a href="#">Điều khoản sử dụng</a>
+                        <span>|</span>
+                        <a href="#">Sitemap</a>
+                    </div>
+                    <p class="footer-company-info">
+                        CÔNG TY TNHH THƯƠNG MẠI ĐIỆN TỬ TUANSTORE - GPĐKKD: 0123456789<br>
+                        Địa chỉ: 123 Nguyễn Huệ, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content auth-modal">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <div class="auth-container">
+                <div class="auth-header">
+                    <h2><i class="fas fa-sign-in-alt"></i> Đăng nhập</h2>
+                    <p>Chào mừng bạn quay trở lại!</p>
+                </div>
+                <form class="auth-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" name="email" required>
+                        <i class="fas fa-envelope form-icon"></i>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Mật khẩu</label>
+                        <input type="password" id="loginPassword" name="password" required>
+                        <i class="fas fa-lock form-icon"></i>
+                        <i class="fas fa-eye toggle-password" onclick="togglePassword('loginPassword')"></i>
+                    </div>
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" id="rememberMe">
+                            <span class="checkmark"></span>
+                            Ghi nhớ đăng nhập
+                        </label>
+                        <a href="#" class="forgot-password" onclick="showForgotPassword()">Quên mật khẩu?</a>
+                    </div>
+                    <button type="submit" class="auth-submit-btn">
+                        <i class="fas fa-sign-in-alt"></i> Đăng nhập
+                    </button>
+                    <div class="auth-switch">
+                        <p>Chưa có tài khoản? <a href="#" onclick="switchToRegister()">Đăng ký ngay</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Forgot Password Modal -->
+    <div class="modal" id="forgotPasswordModal">
+        <div class="modal-content auth-modal">
+            <span class="close" onclick="closeForgotPasswordModal()">&times;</span>
+            <div class="auth-container">
+                <div class="auth-header">
+                    <h2><i class="fas fa-key"></i> Quên mật khẩu</h2>
+                    <p>Nhập email để nhận link đặt lại mật khẩu</p>
+                </div>
+                <form class="auth-form" id="forgotPasswordForm">
+                    <div class="form-group">
+                        <label for="forgotEmail">Email</label>
+                        <input type="email" id="forgotEmail" name="email" required>
+                        <i class="fas fa-envelope form-icon"></i>
+                    </div>
+                    <button type="submit" class="auth-submit-btn">
+                        <i class="fas fa-paper-plane"></i> Gửi link đặt lại
+                    </button>
+                    <div class="auth-switch">
+                        <p>Nhớ mật khẩu? <a href="#" onclick="switchToLogin()">Đăng nhập ngay</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" title="Lên đầu trang">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+
+    <!-- Load combined JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
