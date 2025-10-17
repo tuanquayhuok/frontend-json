@@ -77,7 +77,7 @@ function showSection(sectionName) {
 // Load products from json-server API
 async function loadProducts() {
     try {
-        const response = await fetch('http://localhost:3000/products');
+        const response = await fetch('https://my-json-server.typicode.com/tuanquayhuok/backend-json/products');
         if (!response.ok) {
             throw new Error('Không thể kết nối đến json-server');
         }
