@@ -1,0 +1,678 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "iPhone 17 Pro",
+      "brand": "Apple",
+      "category": "Điện thoại",
+      "image": "image/ip17.jpg",
+      "price": 32990000,
+      "rating": 4.8,
+      "reviews": 123,
+      "description": "iPhone 17 Pro hiệu năng mạnh mẽ, camera chất lượng mang đến trải nghiệm tuyệt vời. Màn hình Super Retina XDR 6.1 inch với chip A19 Pro mạnh mẽ nhất từ Apple.",
+      "screenSize": "6.1 inch",
+      "chip": "A19 Pro",
+      "ram": "8GB",
+      "storageOptions": [
+        {"size": "256GB", "price": 32990000},
+        {"size": "512GB", "price": 36990000},
+        {"size": "1TB", "price": 42990000}
+      ],
+      "colors": [
+        {"name": "Titanium Tự nhiên", "code": "#E5E5E5", "image": "image/ip17.jpg"},
+        {"name": "Titanium Xanh", "code": "#2C5C7D", "image": "image/ip17t1.webp"},
+        {"name": "Titanium Trắng", "code": "#FFFFFF", "image": "image/ip17t2.webp"},
+        {"name": "Titanium Đen", "code": "#1C1C1E", "image": "image/ip17t3.webp"}
+      ],
+      "specifications": {
+        "Màn hình": "6.1\" Super Retina XDR",
+        "CPU": "A19 Pro chip",
+        "RAM": "8GB",
+        "ROM": "256GB",
+        "Camera sau": "48MP Main + 12MP Ultra Wide",
+        "Camera trước": "12MP TrueDepth",
+        "Pin": "3274mAh",
+        "Hệ điều hành": "iOS 18",
+        "Kết nối": "5G, Wi-Fi 6E, Bluetooth 5.3"
+      },
+      "thumbnails": [
+        "image/ip17t1.webp",
+        "image/ip17t2.webp",
+        "image/ip17t3.webp"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "iPhone 17 Pro Max",
+      "brand": "Apple",
+      "category": "Điện thoại",
+      "image": "image/17prm.png",
+      "price": 36990000,
+      "rating": 4.6,
+      "reviews": 210,
+      "description": "iPhone 17 Pro Max màn hình lớn nhất với hiệu năng đỉnh cao. Màn hình Super Retina XDR 6.7 inch và chip A19 Pro mang đến trải nghiệm làm việc và giải trí hoàn hảo.",
+      "screenSize": "6.7 inch",
+      "chip": "A19 Pro",
+      "ram": "12GB",
+      "storageOptions": [
+        {"size": "256GB", "price": 36990000},
+        {"size": "512GB", "price": 40990000},
+        {"size": "1TB", "price": 46990000}
+      ],
+      "colors": [
+        {"name": "Titanium Tự nhiên", "code": "#E5E5E5", "image": "image/17prm.png"},
+        {"name": "Titanium Xanh", "code": "#2C5C7D", "image": "image/ip14.webp"},
+        {"name": "Titanium Trắng", "code": "#FFFFFF", "image": "image/ip71.webp"},
+        {"name": "Titanium Đen", "code": "#1C1C1E", "image": "image/ipn.webp"}
+      ],
+      "specifications": {
+        "Màn hình": "6.7\" Super Retina XDR",
+        "CPU": "A19 Pro chip",
+        "RAM": "12GB",
+        "ROM": "256GB",
+        "Camera sau": "48MP Main + 12MP Ultra Wide + 12MP Telephoto",
+        "Camera trước": "12MP TrueDepth",
+        "Pin": "4422mAh",
+        "Hệ điều hành": "iOS 18",
+        "Kết nối": "5G, Wi-Fi 6E, Bluetooth 5.3"
+      },
+      "thumbnails": [
+        "image/ip14.webp",
+        "image/ip71.webp",
+        "image/ipn.webp"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "iPhone 16",
+      "brand": "Apple",
+      "category": "Điện thoại",
+      "image": "image/ip16.webp",
+      "price": 24990000,
+      "rating": 4.7,
+      "reviews": 98,
+      "description": "iPhone 16 với thời lượng pin tốt.",
+      "specifications": {
+        "Màn hình": "6.1\"",
+        "CPU": "A18",
+        "RAM": "8GB",
+        "ROM": "256GB"
+      },
+      "thumbnails": [
+        "image/ip16.webp",
+        "image/ip17t1.webp",
+        "image/ip17t2.webp"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "iPhone 14",
+      "brand": "Apple",
+      "category": "Điện thoại",
+      "image": "image/ip14.webp",
+      "price": 18990000,
+      "rating": 4.5,
+      "reviews": 156,
+      "description": "Phiên bản iPhone 14 ổn định.",
+      "specifications": {
+        "Màn hình": "6.1\"",
+        "CPU": "A15",
+        "RAM": "6GB",
+        "ROM": "128GB"
+      },
+      "thumbnails": [
+        "image/ip14.webp",
+        "image/ip71.webp",
+        "image/ipn.webp"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Samsung Galaxy S24",
+      "brand": "Samsung",
+      "category": "Điện thoại",
+      "image": "image/ssgalaxy.webp",
+      "price": 21990000,
+      "rating": 4.6,
+      "reviews": 187,
+      "description": "Galaxy S24 với camera AI thông minh.",
+      "specifications": {
+        "Màn hình": "6.2\"",
+        "CPU": "Snapdragon 8 Gen 3",
+        "RAM": "8GB",
+        "ROM": "256GB"
+      },
+      "thumbnails": [
+        "image/samsung.webp",
+        "image/ssgalaxy.webp",
+        "image/ssj7.png"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Samsung Z Fold",
+      "brand": "Samsung",
+      "category": "Điện thoại",
+      "image": "image/zfold.webp",
+      "price": 40990000,
+      "rating": 4.5,
+      "reviews": 66,
+      "description": "Điện thoại màn hình gập thời thượng.",
+      "specifications": {
+        "Màn hình": "7.6\"",
+        "CPU": "Snapdragon",
+        "RAM": "12GB",
+        "ROM": "512GB"
+      },
+      "thumbnails": [
+        "image/zfold.webp",
+        "image/ssgalaxy.webp",
+        "image/samsung.webp"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Xiaomi Flagship",
+      "brand": "Xiaomi",
+      "category": "Điện thoại",
+      "image": "image/xiaomi.webp",
+      "price": 12990000,
+      "rating": 4.4,
+      "reviews": 150,
+      "description": "Hiệu năng cao, giá hợp lý.",
+      "specifications": {
+        "Màn hình": "6.7\"",
+        "CPU": "Snapdragon",
+        "RAM": "12GB",
+        "ROM": "256GB"
+      },
+      "thumbnails": [
+        "image/xiaomi.webp",
+        "image/xiaomi1.webp",
+        "image/galaxy.webp"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Xiaomi Midrange",
+      "brand": "Xiaomi",
+      "category": "Điện thoại",
+      "image": "image/xiaomi1.webp",
+      "price": 7990000,
+      "rating": 4.3,
+      "reviews": 92,
+      "description": "Cấu hình cân đối, pin trâu.",
+      "specifications": {
+        "Màn hình": "6.5\"",
+        "CPU": "MediaTek",
+        "RAM": "8GB",
+        "ROM": "128GB"
+      },
+      "thumbnails": [
+        "image/xiaomi1.webp",
+        "image/xiaomi.webp",
+        "image/galaxy.webp"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Galaxy A Series",
+      "brand": "Samsung",
+      "category": "Điện thoại",
+      "image": "image/samsung.webp",
+      "price": 6990000,
+      "rating": 4.2,
+      "reviews": 73,
+      "description": "Thiết kế đẹp, camera ổn.",
+      "specifications": {
+        "Màn hình": "6.4\"",
+        "CPU": "Exynos",
+        "RAM": "6GB",
+        "ROM": "128GB"
+      },
+      "thumbnails": [
+        "image/samsung.webp",
+        "image/ssgalaxy.webp",
+        "image/ssj7.png"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Galaxy J7",
+      "brand": "Samsung",
+      "category": "Điện thoại",
+      "image": "image/ssj7.png",
+      "price": 3490000,
+      "rating": 4.0,
+      "reviews": 45,
+      "description": "Máy cơ bản, giá rẻ.",
+      "specifications": {
+        "Màn hình": "5.5\"",
+        "CPU": "Exynos",
+        "RAM": "3GB",
+        "ROM": "32GB"
+      },
+      "thumbnails": [
+        "image/ssj7.png",
+        "image/samsung.webp",
+        "image/ssgalaxy.webp"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "MacBook Pro 14",
+      "brand": "Apple",
+      "category": "Máy tính",
+      "image": "image/maytinh1.webp",
+      "price": 45990000,
+      "rating": 4.8,
+      "reviews": 64,
+      "description": "MacBook Pro M-series mạnh mẽ.",
+      "specifications": {
+        "Màn hình": "14\"",
+        "CPU": "Apple Silicon",
+        "RAM": "16GB",
+        "ROM": "512GB"
+      },
+      "thumbnails": [
+        "image/maytinh1.webp",
+        "image/maytinh2.webp",
+        "image/maytinh3.webp"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "MacBook Air",
+      "brand": "Apple",
+      "category": "Máy tính",
+      "image": "image/maytinh2.webp",
+      "price": 26990000,
+      "rating": 4.7,
+      "reviews": 88,
+      "description": "Mỏng nhẹ, pin lâu.",
+      "specifications": {
+        "Màn hình": "13\"",
+        "CPU": "Apple Silicon",
+        "RAM": "8GB",
+        "ROM": "256GB"
+      },
+      "thumbnails": [
+        "image/maytinh2.webp",
+        "image/maytinh1.webp",
+        "image/maytinh4.webp"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Laptop Văn phòng",
+      "brand": "Dell",
+      "category": "Máy tính",
+      "image": "image/maytinh3.webp",
+      "price": 15990000,
+      "rating": 4.3,
+      "reviews": 52,
+      "description": "Phục vụ nhu cầu học tập, làm việc.",
+      "specifications": {
+        "Màn hình": "15.6\"",
+        "CPU": "Intel i5",
+        "RAM": "8GB",
+        "ROM": "256GB"
+      },
+      "thumbnails": [
+        "image/maytinh3.webp",
+        "image/maytinh5.webp",
+        "image/maytinh6.webp"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Laptop Gaming",
+      "brand": "Asus",
+      "category": "Máy tính",
+      "image": "image/maytinh4.webp",
+      "price": 28990000,
+      "rating": 4.5,
+      "reviews": 40,
+      "description": "Card rời, tản nhiệt tốt.",
+      "specifications": {
+        "Màn hình": "16\"",
+        "CPU": "Intel i7",
+        "RAM": "16GB",
+        "ROM": "512GB"
+      },
+      "thumbnails": [
+        "image/maytinh4.webp",
+        "image/maytinh7.webp",
+        "image/maytinh8.webp"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Laptop Học sinh",
+      "brand": "HP",
+      "category": "Máy tính",
+      "image": "image/maytinh5.webp",
+      "price": 9990000,
+      "rating": 4.2,
+      "reviews": 37,
+      "description": "Giá tốt, ổn định.",
+      "specifications": {
+        "Màn hình": "14\"",
+        "CPU": "Intel i3",
+        "RAM": "8GB",
+        "ROM": "256GB"
+      },
+      "thumbnails": [
+        "image/maytinh5.webp",
+        "image/maytinh6.webp",
+        "image/maytinh7.webp"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Laptop Đồ họa",
+      "brand": "Lenovo",
+      "category": "Máy tính",
+      "image": "image/maytinh6.webp",
+      "price": 32990000,
+      "rating": 4.6,
+      "reviews": 29,
+      "description": "Màn hình chuẩn màu, GPU mạnh.",
+      "specifications": {
+        "Màn hình": "15.6\"",
+        "CPU": "Intel i7",
+        "RAM": "32GB",
+        "ROM": "1TB"
+      },
+      "thumbnails": [
+        "image/maytinh6.webp",
+        "image/maytinh4.webp",
+        "image/maytinh8.webp"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Laptop Siêu mỏng",
+      "brand": "Acer",
+      "category": "Máy tính",
+      "image": "image/maytinh7.webp",
+      "price": 18990000,
+      "rating": 4.4,
+      "reviews": 33,
+      "description": "Thiết kế mỏng nhẹ, thời trang.",
+      "specifications": {
+        "Màn hình": "13.3\"",
+        "CPU": "Intel i5",
+        "RAM": "8GB",
+        "ROM": "256GB"
+      },
+      "thumbnails": [
+        "image/maytinh7.webp",
+        "image/maytinh2.webp",
+        "image/maytinh8.webp"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Laptop Doanh nhân",
+      "brand": "Dell",
+      "category": "Máy tính",
+      "image": "image/maytinh8.webp",
+      "price": 24990000,
+      "rating": 4.5,
+      "reviews": 22,
+      "description": "Bền bỉ, pin trâu.",
+      "specifications": {
+        "Màn hình": "14\"",
+        "CPU": "Intel i5",
+        "RAM": "16GB",
+        "ROM": "512GB"
+      },
+      "thumbnails": [
+        "image/maytinh8.webp",
+        "image/maytinh5.webp",
+        "image/maytinh6.webp"
+      ]
+    },
+    {
+      "id": 19,
+      "name": "TV 4K 55\"",
+      "brand": "Samsung",
+      "category": "TV",
+      "image": "image/tv.webp",
+      "price": 9990000,
+      "rating": 4.4,
+      "reviews": 31,
+      "description": "Smart TV 4K sắc nét.",
+      "specifications": {
+        "Kích thước": "55\"",
+        "Độ phân giải": "4K"
+      },
+      "thumbnails": [
+        "image/tv1.webp",
+        "image/tv2.webp",
+        "image/tv4.webp"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "TV 4K 65\"",
+      "brand": "LG",
+      "category": "TV",
+      "image": "image/tv1.webp",
+      "price": 14990000,
+      "rating": 4.5,
+      "reviews": 27,
+      "description": "Âm thanh sống động.",
+      "specifications": {
+        "Kích thước": "65\"",
+        "Độ phân giải": "4K"
+      },
+      "thumbnails": [
+        "image/tv1.webp",
+        "image/tv3.avif",
+        "image/tv5.webp"
+      ]
+    },
+    {
+      "id": 21,
+      "name": "TV QLED",
+      "brand": "Samsung",
+      "category": "TV",
+      "image": "image/tv2.webp",
+      "price": 18990000,
+      "rating": 4.6,
+      "reviews": 35,
+      "description": "Màu sắc rực rỡ, độ tương phản cao.",
+      "specifications": {
+        "Công nghệ": "QLED",
+        "Độ phân giải": "4K"
+      },
+      "thumbnails": [
+        "image/tv2.webp",
+        "image/tv4.webp",
+        "image/tv6.webp"
+      ]
+    },
+    {
+      "id": 22,
+      "name": "TV OLED",
+      "brand": "LG",
+      "category": "TV",
+      "image": "image/tv3.avif",
+      "price": 25990000,
+      "rating": 4.7,
+      "reviews": 18,
+      "description": "Đen sâu tuyệt đối.",
+      "specifications": {
+        "Công nghệ": "OLED",
+        "Độ phân giải": "4K"
+      },
+      "thumbnails": [
+        "image/tv3.avif",
+        "image/tv5.webp",
+        "image/tv6.webp"
+      ]
+    },
+    {
+      "id": 23,
+      "name": "TV 50\"",
+      "brand": "Sony",
+      "category": "TV",
+      "image": "image/tv4.webp",
+      "price": 7990000,
+      "rating": 4.2,
+      "reviews": 22,
+      "description": "Kích thước vừa, giá tốt.",
+      "specifications": {
+        "Kích thước": "50\"",
+        "Độ phân giải": "4K"
+      },
+      "thumbnails": [
+        "image/tv4.webp",
+        "image/tv5.webp",
+        "image/tv.webp"
+      ]
+    },
+    {
+      "id": 24,
+      "name": "TV 43\"",
+      "brand": "TCL",
+      "category": "TV",
+      "image": "image/tv5.webp",
+      "price": 5990000,
+      "rating": 4.1,
+      "reviews": 19,
+      "description": "Phù hợp phòng nhỏ.",
+      "specifications": {
+        "Kích thước": "43\"",
+        "Độ phân giải": "4K"
+      },
+      "thumbnails": [
+        "image/tv5.webp",
+        "image/tv6.webp",
+        "image/tv2.webp"
+      ]
+    },
+    {
+      "id": 25,
+      "name": "TV 75\"",
+      "brand": "Samsung",
+      "category": "TV",
+      "image": "image/tv6.webp",
+      "price": 25990000,
+      "rating": 4.5,
+      "reviews": 15,
+      "description": "Màn hình lớn cho phòng khách.",
+      "specifications": {
+        "Kích thước": "75\"",
+        "Độ phân giải": "4K"
+      },
+      "thumbnails": [
+        "image/tv6.webp",
+        "image/tv5.webp",
+        "image/tv1.webp"
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Màn hình 24\"",
+      "brand": "Dell",
+      "category": "Phụ kiện",
+      "image": "image/mh1.webp",
+      "price": 2590000,
+      "rating": 4.3,
+      "reviews": 41,
+      "description": "Full HD, 75Hz.",
+      "specifications": {
+        "Kích thước": "24\"",
+        "Tần số quét": "75Hz"
+      },
+      "thumbnails": [
+        "image/mh1.webp",
+        "image/mh2.webp",
+        "image/mh3.webp"
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Màn hình 27\"",
+      "brand": "LG",
+      "category": "Phụ kiện",
+      "image": "image/mh2.webp",
+      "price": 3990000,
+      "rating": 4.4,
+      "reviews": 28,
+      "description": "2K, 75Hz.",
+      "specifications": {
+        "Kích thước": "27\"",
+        "Độ phân giải": "2K"
+      },
+      "thumbnails": [
+        "image/mh2.webp",
+        "image/mh1.webp",
+        "image/mh4.webp"
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Màn hình 32\" Gaming",
+      "brand": "Asus",
+      "category": "Phụ kiện",
+      "image": "image/mh3.webp",
+      "price": 5490000,
+      "rating": 4.5,
+      "reviews": 23,
+      "description": "144Hz, cong nhẹ.",
+      "specifications": {
+        "Kích thước": "32\"",
+        "Tần số quét": "144Hz"
+      },
+      "thumbnails": [
+        "image/mh3.webp",
+        "image/mh2.webp",
+        "image/mh4.webp"
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Màn hình 34\" Ultrawide",
+      "brand": "Samsung",
+      "category": "Phụ kiện",
+      "image": "image/mh4.webp",
+      "price": 8990000,
+      "rating": 4.6,
+      "reviews": 12,
+      "description": "Tỉ lệ 21:9, làm việc đa nhiệm.",
+      "specifications": {
+        "Kích thước": "34\"",
+        "Tỉ lệ": "21:9"
+      },
+      "thumbnails": [
+        "image/mh4.webp",
+        "image/mh3.webp",
+        "image/mh2.webp"
+      ]
+    },
+    {
+      "id": 30,
+      "name": "TV 8K 65\" Cao cấp",
+      "brand": "Sony",
+      "category": "TV",
+      "image": "image/banner5.webp",
+      "price": 49990000,
+      "rating": 4.7,
+      "reviews": 9,
+      "description": "Độ phân giải 8K siêu nét.",
+      "specifications": {
+        "Kích thước": "65\"",
+        "Độ phân giải": "8K"
+      },
+      "thumbnails": [
+        "image/banner5.webp",
+        "image/tv1.webp",
+        "image/tv2.webp"
+      ]
+    }
+  ]
+}
